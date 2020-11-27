@@ -19,7 +19,7 @@ class rutasAnimales {
             yield database_1.db.conectarBD()
                 .then((mensaje) => __awaiter(this, void 0, void 0, function* () {
                 console.log(mensaje);
-                const query = yield Animal_1.Animales.find();
+                const query = yield Animal_1.Animales.find({});
                 console.log(query);
                 res.json(query);
             }))

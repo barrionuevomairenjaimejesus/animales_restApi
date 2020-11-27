@@ -16,7 +16,7 @@ class rutasAnimales {
         await db.conectarBD()
         .then( async (mensaje) => {
             console.log(mensaje)
-            const query = await Animales.find()
+            const query = await Animales.find({})
             console.log(query)
             res.json(query)
         })
