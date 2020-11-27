@@ -2,8 +2,7 @@ import mongoose from 'mongoose';
 
 class DataBase {
 
-    private _cadenaConexion: string = 'mongodb://localhost/geometria'
-
+    private _cadenaConexion: string = `mongodb+srv://user1:usuario@cluster0.7gnbs.mongodb.net/animal?retryWrites=true&w=majority`
     constructor(){
 
     }
