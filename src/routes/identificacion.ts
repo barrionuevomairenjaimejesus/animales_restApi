@@ -34,4 +34,4 @@ class IdentificacionRoutes {
 
 const obj = new IdentificacionRoutes()
 obj.misRutas()
-export const identificacionRoutes = obj.router
+export const identificacion = obj.router

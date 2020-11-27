@@ -1,4 +1,5 @@
 "use strict";
+// `mongodb+srv://${userAtlas}:${passAtlas}@cluster0.7gnbs.mongodb.net/${bdAtlas}?retryWrites=true&w=majority`
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -12,12 +13,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.identificacion = void 0;
 const express_1 = require("express");
 const database_1 = require("../database/database");
-class Identificacion {
+class IdentificacionRoutes {
     constructor() {
-        this.ident = (req, res) => __awaiter(this, void 0, void 0, function* () {
-            const { password } = req.params;
-            const { user } = req.params;
-            setBD(true, user, password);
+        this.getId = (req, res) => __awaiter(this, void 0, void 0, function* () {
             yield database_1.db.conectarBD()
                 .then((mensaje) => __awaiter(this, void 0, void 0, function* () {
                 console.log(mensaje);
@@ -35,21 +33,9 @@ class Identificacion {
         return this._router;
     }
     misRutas() {
-        this._router.get('/:user&:password', this.ident); //Introducir el usuario y contraseña
+        this._router.get('/', this.getId);
     }
 }
-const setBD = (local, userAtlas, passAtlas) => __awaiter(void 0, void 0, void 0, function* () {
-    const bdLocal = 'proyecto';
-    const conexionLocal = `mongodb://localhost/${bdLocal}`;
-    if (local) {
-        database_1.db.cadenaConexion = conexionLocal;
-    }
-    else {
-        const bdAtlas = 'Refugio'; //Nombre de la colección
-        const conexionAtlas = `mongodb+srv://${userAtlas}:${passAtlas}@cluster0.7gnbs.mongodb.net/${bdAtlas}?retryWrites=true&w=majority`;
-        database_1.db.cadenaConexion = conexionAtlas;
-    }
-});
-const obj = new Identificacion();
+const obj = new IdentificacionRoutes();
 obj.misRutas();
 exports.identificacion = obj.router;
