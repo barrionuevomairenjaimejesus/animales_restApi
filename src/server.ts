@@ -14,7 +14,7 @@ class Server {
     }
     private async config(){
 
-        this.app.set('port', process.env.PORT || 4000)
+        this.app.set('port', process.env.PORT || 3000)
 
         this.app.use(express.json()) // para que nuestro servidor entienda
         // los formatos json desde clientes
