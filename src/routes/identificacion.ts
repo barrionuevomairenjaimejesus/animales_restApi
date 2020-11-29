@@ -1,5 +1,3 @@
-// `mongodb+srv://${userAtlas}:${passAtlas}@cluster0.7gnbs.mongodb.net/${bdAtlas}?retryWrites=true&w=majority`
-
 import {Request, Response, Router } from 'express'
 import { db } from '../database/database'
 
