@@ -72,7 +72,7 @@ class Animal {
     }
     precioComida() {
         let precomida;
-        precomida = (this._peso * 0.5) * 2; // Suponemos que la comida se compra al por mayor y que no importa el tipo de comida 
+        precomida = (this._peso * 0.5) * 3; // Suponemos que la comida se compra al por mayor y que no importa el tipo de comida 
         if (isNaN(this._peso)) {
             throw "No has introducido un peso, no podemos calcular el precio de la comida";
         }
