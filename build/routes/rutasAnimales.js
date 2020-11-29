@@ -132,7 +132,7 @@ class rutasAnimales {
                 else {
                     const f = new Animal_1.Animal(query._nombre, query._especie, query._peso, query._altura, query._curado, query._operaciones);
                     res.json({ "Nombre del animal": f._nombre, "Necesitaremos un total en comida de ": f.precioComida(),
-                        "Gastaremos en operaciones ": f.precioOperaciones(), "En total necesitaríamos ": f.total()
+                        "Gastaremos en operaciones ": f.precioOperacion(), "En total necesitaríamos ": f.total()
                     });
                 }
             }));
@@ -205,7 +205,7 @@ class rutasAnimales {
         this._router.get('/comida/:nombre', this.comida);
         this._router.get('/total/:nombre', this.total);
         this._router.get('/liberar/:nombre', this.liberarAnimal);
-        this._router.get('/actualizar', this.actualiza);
+        this._router.get('/actualizar/:nombre', this.actualiza);
     }
 }
 const obj = new rutasAnimales();
